@@ -20,3 +20,6 @@ errors failed and provide thorough feedback in the HTTP response.
 Some Advice: You can get far more fine grained control if you create DTO objects. DTOs are 
 Data Transfer Objects.  Rather than expecting users to send something matching the Model, we have them
 send a DTO object which can have a different form and its own validation logic.
+
+JSR 303/380 is a specification. Our implementation is the Hibernate Validator.  It is 
+supplied to projects using spring-boot-starter-web (Spring Boot's MVC package).
