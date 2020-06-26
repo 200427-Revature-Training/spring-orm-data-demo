@@ -1,5 +1,7 @@
 package com.revature.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -37,7 +39,7 @@ public class SportController {
 	}
 	
 	@PostMapping
-	public Sport saveSport(@RequestBody Sport sport) {
+	public Sport saveSport(@Valid @RequestBody Sport sport) {
 		return sportService.save(sport);
 	}
 	

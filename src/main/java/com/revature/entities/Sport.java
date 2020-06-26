@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="sports")
@@ -13,8 +16,13 @@ public class Sport {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
+	
+	@NotBlank(message="Name requires a string value")
 	private String name;
 	
+	@NotNull(message="Must provide minimumPlayers")
+	@Min(value=1, message="Minimum players must be greater than 0")
 	@Column(name="minimum_players")
 	private int minimumPlayers;
 	private String type;
